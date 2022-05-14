@@ -1,8 +1,10 @@
 <script lang="ts" setup>
-
+import Nav from '@/components/Nav.vue'
 </script>
 
-<template>home</template>
+<template>
+  <Nav></Nav>
+</template>
 
 <style lang="less" scoped>
 </style>
