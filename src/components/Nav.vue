@@ -4,7 +4,10 @@
 
 <template>
   <nav>
-    <img src="@/assets/buerka@500px.jpg" alt="logo" />
+    <div class="logo">
+      <img src="@/assets/buerka@500px.jpg" alt="logo" />
+      <span>不二卡服务器</span>
+    </div>
   </nav>
 </template>
 
@@ -20,9 +23,18 @@ nav {
   top: 0;
   padding: 0 15px;
   box-sizing: border-box;
-  img {
-    height: 50px;
-    border-radius: 50%;
+  .logo {
+    display: flex;
+    align-items: center;
+    img {
+      height: 50px;
+      border-radius: 50%;
+    }
+    span {
+      font-size: 24px;
+      margin-left: 10px;
+      color: #fff;
+    }
   }
 }
 </style>
