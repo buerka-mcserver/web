@@ -6,6 +6,7 @@
   <nav>
     <div class="logo">
       <img src="@/assets/buerka@500px.jpg" alt="logo" />
+
       <span>不二卡服务器</span>
     </div>
   </nav>
@@ -19,10 +20,11 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   padding: 0 15px;
   box-sizing: border-box;
+  z-index: 100;
   .logo {
     display: flex;
     align-items: center;
