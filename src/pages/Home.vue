@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import Nav from '@/components/Nav.vue'
-import { onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue'
 
 const background = ref<null | HTMLElement>(null)
 const video = document.createElement('video')
@@ -8,13 +8,13 @@ const video = document.createElement('video')
 const videoBackground = () => {
   const videos = [
     '/src/assets/video/0.mp4',
-    '/src/assets/video/1.mp4',
+    '/src/assets/video/1.mp4'
   ]
   let i = 0
   video.muted = true
   video.src = videos[i]
   video.addEventListener('canplay', () => {
-    console.log('play');
+    console.log('play')
 
     video.play()
   })
