@@ -1,11 +1,8 @@
 <script lang="ts" setup>
-import Nav from '@/components/Nav.vue'
-import { Index } from '@/components/HomdCards/'
+
 </script>
 
 <template>
-  <Nav></Nav>
-  <Index></Index>
   <div class="screenshots"></div>
 </template>
 
