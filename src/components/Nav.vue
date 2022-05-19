@@ -15,7 +15,7 @@
 <style lang="less" scoped>
 nav {
   width: 100%;
-  height: 60px;
+  height: 50px;
   background-color: rgba(0, 0, 0, 0.588);
   display: flex;
   justify-content: space-between;
@@ -29,11 +29,11 @@ nav {
     display: flex;
     align-items: center;
     img {
-      height: 50px;
+      height: 35px;
       border-radius: 50%;
     }
     span {
-      font-size: 24px;
+      font-size: 22px;
       margin-left: 10px;
       color: #fff;
     }

@@ -14,8 +14,6 @@ const videoBackground = () => {
   video.muted = true
   video.src = videos[i]
   video.addEventListener('canplay', () => {
-    console.log('play')
-
     video.play()
   })
   const next = () => {
