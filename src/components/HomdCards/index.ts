@@ -1,3 +1,4 @@
 import Index from './Index.vue'
+import Screenshots from './Screenshots.vue'
 
-export { Index }
+export { Index, Screenshots }
