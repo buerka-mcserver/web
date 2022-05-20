@@ -7,8 +7,9 @@ import { Index, Screenshots, FixedImage, Advantages } from '@/components/HomdCar
   <Nav></Nav>
   <Index></Index>
   <Screenshots></Screenshots>
-  <FixedImage src="/src/assets/screenshots/1.png" :height="300"></FixedImage>
+  <FixedImage src="/src/assets/screenshots/3.png" :height="300"></FixedImage>
   <Advantages></Advantages>
+  <FixedImage src="/src/assets/screenshots/2.jpg" :height="300"></FixedImage>
 </template>
 
 <style lang="less" scoped>
