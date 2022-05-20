@@ -1,13 +1,14 @@
 <script lang="ts" setup>
 import Nav from '@/components/Nav.vue'
-import { Index, Screenshots, FixedImage } from '@/components/HomdCards/'
+import { Index, Screenshots, FixedImage, Advantages } from '@/components/HomdCards/'
 </script>
 
 <template>
   <Nav></Nav>
   <Index></Index>
   <Screenshots></Screenshots>
-  <FixedImage src="/src/assets/screenshots/1.png" :height="200"></FixedImage>
+  <FixedImage src="/src/assets/screenshots/1.png" :height="300"></FixedImage>
+  <Advantages></Advantages>
 </template>
 
 <style lang="less" scoped>
