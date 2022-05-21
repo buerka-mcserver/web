@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import Nav from '@/components/Nav.vue'
-import { Index, Screenshots, FixedImage, Advantages, Status } from '@/components/HomdCards/'
+import { Index, Screenshots, FixedImage, Advantages, Status, Join } from '@/components/HomdCards/'
 </script>
 
 <template>
@@ -12,6 +12,7 @@ import { Index, Screenshots, FixedImage, Advantages, Status } from '@/components
   <FixedImage src="/src/assets/screenshots/2.jpg" :height="300"></FixedImage>
   <Status></Status>
   <FixedImage src="/src/assets/screenshots/1.png" :height="300"></FixedImage>
+  <Join></Join>
 </template>
 
 <style lang="less" scoped>
