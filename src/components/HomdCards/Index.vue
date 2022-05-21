@@ -38,7 +38,7 @@ onMounted(() => {
   width: 100%;
   height: 100vh;
   background-color: #aaaa;
-  background: url(../assets/background/af28f8b1e00781c40a0c13a005d92156.jpg)
+  background: url(/src/assets/background/af28f8b1e00781c40a0c13a005d92156.jpg)
     no-repeat center;
   background-size: cover;
   overflow: hidden;
