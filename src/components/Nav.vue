@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 const color = ref('black')
-const setColor = (e: Event) => {
-  console.log(e)
+const setColor = () => {
   if (window.scrollY <= 100) {
     color.value = 'black'
   } else {
@@ -11,8 +10,6 @@ const setColor = (e: Event) => {
 }
 
 onMounted(() => {
-  console.log(11)
-
   window.addEventListener('scroll', setColor)
 })
 </script>
