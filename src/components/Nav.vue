@@ -1,12 +1,26 @@
 <script lang="ts" setup>
+import { onMounted, ref } from 'vue'
+const color = ref('')
+const setColor = (e: Event) => {
+  console.log(e)
+  if (window.scrollY <= 100) {
+    color.value = 'black'
+  } else {
+    color.value = 'white'
+  }
+}
 
+onMounted(() => {
+  console.log(11)
+
+  window.addEventListener('scroll', setColor)
+})
 </script>
 
 <template>
-  <nav>
+  <nav :class="color">
     <div class="logo">
       <img src="@/assets/buerka@500px.jpg" alt="logo" />
-
       <span>不二卡服务器</span>
     </div>
   </nav>
@@ -16,7 +30,6 @@
 nav {
   width: 100%;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.588);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,6 +38,17 @@ nav {
   padding: 0 15px;
   box-sizing: border-box;
   z-index: 100;
+  transition: all 0.5s;
+  &.white {
+    background-color: #fff;
+    box-shadow: 0 1px 5px 0 #3333;
+    .logo span {
+      color: #333;
+    }
+  }
+  &.black {
+    background-color: rgba(0, 0, 0, 0.588);
+  }
   .logo {
     display: flex;
     align-items: center;
