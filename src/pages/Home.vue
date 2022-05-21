@@ -7,11 +7,11 @@ import { Index, Screenshots, FixedImage, Advantages, Status, Join, Footer } from
   <Nav></Nav>
   <Index></Index>
   <Screenshots></Screenshots>
-  <FixedImage src="/src/assets/screenshots/3.png" :height="300"></FixedImage>
+  <FixedImage src="/src/assets/screenshots/3.png" :height="500"></FixedImage>
   <Advantages></Advantages>
-  <FixedImage src="/src/assets/screenshots/2.jpg" :height="300"></FixedImage>
+  <FixedImage src="/src/assets/screenshots/2.jpg" :height="500"></FixedImage>
   <Status></Status>
-  <FixedImage src="/src/assets/screenshots/1.png" :height="300"></FixedImage>
+  <FixedImage src="/src/assets/screenshots/1.png" :height="500"></FixedImage>
   <Join></Join>
   <Footer></Footer>
 </template>
