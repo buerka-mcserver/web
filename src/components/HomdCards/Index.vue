@@ -46,8 +46,9 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   :deep(video) {
-    height: 100vh;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 </style>

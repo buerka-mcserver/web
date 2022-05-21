@@ -51,7 +51,7 @@ const setText = (t: string) => {
     min-height: 3em;
     margin-top: 20px;
     transform: translateX(-50%);
-    margin-left: 52%;
+    margin-left: 50%;
     width: 100%;
     font-size: 20px;
   }
