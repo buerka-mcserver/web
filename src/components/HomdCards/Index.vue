@@ -48,7 +48,6 @@ onMounted(() => {
   :deep(video) {
     height: 100vh;
     object-fit: contain;
-    height: auto;
   }
 }
 </style>
