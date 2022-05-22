@@ -18,6 +18,9 @@ const videoBackground = () => {
   const next = () => {
     i == videos.length - 1 ? i = 0 : i++
     video.src = videos[i]
+
+    // 切换文案
+    index.value == text.length - 1 ? index.value = 0 : index.value++
   }
 
   video.addEventListener('ended', next)
@@ -27,10 +30,36 @@ videoBackground()
 onMounted(() => {
   background.value?.appendChild(video)
 })
+
+const index = ref(0)
+const text = [
+  {
+    title: '1.18原版互通服',
+    text: '最新正式版，同时支持 java 版与基岩版'
+  },
+  {
+    title: '丰厚的节日福利',
+    text: '除夕、端午、中秋等节日，将发放节日福利'
+  },
+  {
+    title: '时刻保持最新版本',
+    text: '第一时间更新版本，保持最新正式版'
+  },
+  {
+    title: '支持离线模式',
+    text: '支持离线模式设置皮肤，没有正版也可游玩'
+  }
+]
 </script>
 
 <template>
-  <div class="background" ref="background"></div>
+  <div class="background" ref="background">
+    <div class="text">
+      <h1>{{ text[index].title }}</h1>
+      <div class="hr"></div>
+      <p>{{ text[index].text }}</p>
+    </div>
+  </div>
 </template>
 
 <style lang="less" scoped>
@@ -43,12 +72,57 @@ onMounted(() => {
   background-size: cover;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
+  position: relative;
   :deep(video) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+  }
+  .text {
+    z-index: 1;
+    max-width: 400px;
+    margin-left: 250px;
+    margin-right: 10px;
+    h1 {
+      color: #fff;
+      text-align: left;
+      margin-bottom: 20px;
+      font-size: 35px;
+    }
+    .hr {
+      width: 100%;
+      border-top: 1px rgba(255, 255, 255, 0.667) solid;
+    }
+    p {
+      color: #fff;
+      font-size: 26px;
+      margin: 10px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .background {
+    .text {
+      margin-left: 160px;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .background {
+    .text {
+      margin-left: 60px;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .background {
+    .text {
+      margin-left: 10px;
+    }
   }
 }
 </style>
