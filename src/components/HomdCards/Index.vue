@@ -59,6 +59,7 @@ const text = [
       <div class="hr"></div>
       <p>{{ text[index].text }}</p>
     </div>
+    <div class="next"></div>
   </div>
 </template>
 
@@ -75,6 +76,26 @@ const text = [
   // justify-content: center;
   align-items: center;
   position: relative;
+  .next {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #0000;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 20px auto;
+    z-index: 100;
+    transform: rotate(-135deg);
+    animation: next 2s infinite linear;
+  }
+  @keyframes next {
+    50% {
+      transform: translateY(10px) rotate(-135deg);
+    }
+  }
   :deep(video) {
     width: 100%;
     height: 100%;
@@ -84,7 +105,7 @@ const text = [
   .text {
     z-index: 1;
     max-width: 400px;
-    margin-left: 250px;
+    margin-left: 240px;
     margin-right: 10px;
     h1 {
       color: #fff;
