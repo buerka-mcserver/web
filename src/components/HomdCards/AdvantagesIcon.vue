@@ -33,8 +33,8 @@ const emits = defineEmits(['hover'])
       transform: translateY(5px);
     }
     :deep(svg) {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
     }
   }
 }

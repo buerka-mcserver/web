@@ -3,9 +3,22 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination, Autoplay } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { ref } from 'vue'
 const modules = [
   Autoplay, Pagination
 ]
+
+const slidesPerView = ref(3)
+
+window.addEventListener('resize', () => {
+  if (document.body.clientWidth < 400) {
+    slidesPerView.value = 1
+  } else if (document.body.clientWidth < 600) {
+    slidesPerView.value = 2
+  } else {
+    slidesPerView.value = 3
+  }
+})
 </script>
 
 <template>
@@ -13,7 +26,7 @@ const modules = [
     <h1>屏幕截图</h1>
     <swiper
       :modules="modules"
-      :slides-per-view="3"
+      :slides-per-view="slidesPerView"
       :space-between="10"
       loop
       autoplay

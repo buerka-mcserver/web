@@ -73,6 +73,7 @@
     .qr-code {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       div {
         display: flex;
         flex-direction: column;
@@ -124,6 +125,25 @@
     }
     a {
       margin: 0 3px;
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .footer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 1fr 50px;
+    max-width: 450px;
+    margin: auto;
+    .links {
+      grid-area: 1 / 1 / 2 / 2;
+      margin-bottom: 30px;
+    }
+    .sponsor {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+    .icp {
+      grid-area: 3 / 1 / 4 / 2;
     }
   }
 }

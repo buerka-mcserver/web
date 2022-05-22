@@ -43,7 +43,8 @@ const setText = (t: string) => {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    overflow: hidden;
     cursor: pointer;
   }
   .text {

@@ -4,18 +4,21 @@ import { GridComponent, GridComponentOption } from 'echarts/components'
 import { LineChart, LineSeriesOption } from 'echarts/charts'
 import { UniversalTransition } from 'echarts/features'
 import { CanvasRenderer } from 'echarts/renderers'
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
+
+let myChart: echarts.ECharts
+echarts.use([GridComponent, LineChart, CanvasRenderer, UniversalTransition])
+type EChartsOption = echarts.ComposeOption<
+  GridComponentOption | LineSeriesOption
+>;
 
 onMounted(() => {
+  initChart()
+})
 
-  echarts.use([GridComponent, LineChart, CanvasRenderer, UniversalTransition])
-
-  type EChartsOption = echarts.ComposeOption<
-    GridComponentOption | LineSeriesOption
-  >;
-
+const initChart = () => {
   let chartDom: HTMLElement = document.querySelector('.status-echarts')!
-  let myChart = echarts.init(chartDom)
+  myChart = echarts.init(chartDom)
   let option: EChartsOption
 
   // 临时用假数据
@@ -39,6 +42,20 @@ onMounted(() => {
 
   option && myChart.setOption(option)
 
+}
+
+let resizeTimeout: any
+const reset = () => {
+  clearTimeout(resizeTimeout)
+  resizeTimeout = setTimeout(() => {
+    myChart.dispose()
+    initChart()
+  }, 100)
+}
+
+window.addEventListener('resize', reset)
+onUnmounted(() => {
+  window.removeEventListener('resize', reset)
 })
 
 </script>
