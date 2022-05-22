@@ -10,7 +10,7 @@ const modules = [
 
 const slidesPerView = ref(3)
 
-window.addEventListener('resize', () => {
+const resize = () => {
   if (document.body.clientWidth < 400) {
     slidesPerView.value = 1
   } else if (document.body.clientWidth < 600) {
@@ -18,7 +18,11 @@ window.addEventListener('resize', () => {
   } else {
     slidesPerView.value = 3
   }
-})
+}
+resize()
+
+window.addEventListener('resize', resize)
+window.removeEventListener('resize', resize)
 </script>
 
 <template>
