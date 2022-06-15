@@ -1,37 +1,46 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 
-const background = ref<null | HTMLElement>(null)
-const video = document.createElement('video')
+const videoDom = ref<HTMLElement | null>(null)
 
-const videoBackground = () => {
-  const videos = [
-    '/src/assets/video/0.mp4',
-    '/src/assets/video/1.mp4'
-  ]
-  let i = 0
-  video.muted = true
-  video.src = videos[i]
-  video.addEventListener('canplay', () => {
-    video.play()
-  })
-  const next = () => {
-    i == videos.length - 1 ? i = 0 : i++
-    video.src = videos[i]
+const videos = [
+  '/src/assets/video/0.mp4',
+  '/src/assets/video/1.mp4'
+]
+const videoDoms: HTMLVideoElement[] = []
+let videoIndex = 0
 
-    // 切换文案
-    index.value == text.length - 1 ? index.value = 0 : index.value++
-  }
-
-  video.addEventListener('ended', next)
+const next = () => {
+  // 删除子元素
+  videoDom.value!.innerHTML = ''
+  // 添加新元素
+  videoDom.value?.appendChild<HTMLVideoElement>(videoDoms[videoIndex])
+  // 播放
+  videoDoms[videoIndex].play()
+  // videoIndex 自增
+  videoIndex == videoDoms.length - 1 ? videoIndex = 0 : videoIndex++
+  // textIndex 自增
+  textIndex.value == text.length - 1 ? textIndex.value = 0 : textIndex.value++
 }
-videoBackground()
 
-onMounted(() => {
-  background.value?.appendChild(video)
+// 创建视频dom数组
+videos.forEach(e => {
+  const video = document.createElement('video')
+  // 静音
+  video.muted = true
+  video.src = e
+  // 加载视频
+  video.load()
+  // 结束后播放下一个
+  video.addEventListener('ended', next)
+  videoDoms.push(video)
 })
 
-const index = ref(0)
+onMounted(() => {
+  next()
+})
+
+const textIndex = ref(0)
 const text = [
   {
     title: '1.18原版互通服',
@@ -54,10 +63,11 @@ const text = [
 
 <template>
   <div class="background" ref="background">
+    <div class="video" ref="videoDom"></div>
     <div class="text">
-      <h1>{{ text[index].title }}</h1>
+      <h1>{{ text[textIndex].title }}</h1>
       <div class="hr"></div>
-      <p>{{ text[index].text }}</p>
+      <p>{{ text[textIndex].text }}</p>
     </div>
     <div class="next"></div>
   </div>
@@ -96,12 +106,17 @@ const text = [
       transform: translateY(10px) rotate(-135deg);
     }
   }
-  :deep(video) {
+  :deep(.video) {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     position: absolute;
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
+
   .text {
     z-index: 1;
     max-width: 400px;
