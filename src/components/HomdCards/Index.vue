@@ -43,7 +43,7 @@ onMounted(() => {
 const textIndex = ref(0)
 const text = [
   {
-    title: '1.18原版互通服',
+    title: '1.19原版互通服',
     text: '最新正式版，同时支持 java 版与基岩版'
   },
   {
