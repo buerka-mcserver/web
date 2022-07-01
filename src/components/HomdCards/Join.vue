@@ -48,12 +48,12 @@ const openQq = () => {
   openLink('https://jq.qq.com/?_wv=1027&k=QUEvnQFQ', 1000)
 }
 const openMcBe = () => {
-  openElNotification('已唤起mc客户端', '若唤起失败请尝试手动添加', 'play.buerka.cn')
-  openLink('minecraft:?addExternalServer=不二卡服务器|play.buerka.cn:19132', 1000)
+  openElNotification('已唤起mc客户端', '若唤起失败请尝试手动添加', 'mc.buerka.cn')
+  openLink('minecraft:?addExternalServer=不二卡服务器|mc.buerka.cn:19132', 1000)
 }
 const openMcJe = () => {
   copy('play.buerka.cn')
-  openElNotification('已复制服务器ip', '请打开游戏手动添加', 'play.buerka.cn')
+  openElNotification('已复制服务器ip', '请打开游戏手动添加', 'mc.buerka.cn')
 }
 </script>
 
