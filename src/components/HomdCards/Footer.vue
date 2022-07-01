@@ -17,10 +17,10 @@
           ></span>
           微信
         </div>
-        <div>
+        <!-- <div>
           <span class="afadian" style="background-image: url('/src/assets/qrCode/afadian.png');"></span>
           爱发电
-        </div>
+        </div>-->
       </div>
     </div>
     <div class="links">
