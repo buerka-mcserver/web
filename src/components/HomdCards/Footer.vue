@@ -17,15 +17,16 @@
           ></span>
           微信
         </div>
-        <!-- <div>
-          <span class="afadian" style="background-image: url('/src/assets/qrCode/afadian.png');"></span>
-          爱发电
-        </div>-->
+        <div>
+          <span class="qq" style="background-image: url('/src/assets/qrCode/qq.jpg');"></span>
+          qq群
+        </div>
       </div>
     </div>
     <div class="links">
       <div class="friend-link">
         <h3>友链</h3>
+        <a href="https://www.buerka.cn">buerka博客</a>
         <a href="https://litf.com.cn">Litf blog</a>
         <a href="https://www.alongw.cn">阿龙博客</a>
       </div>
@@ -91,9 +92,9 @@
             background-size: 183px;
             background-position: -40px -44px;
           }
-          &.afadian {
-            background-size: 679px;
-            background-position: -292px -533px;
+          &.qq {
+            background-size: 168px;
+            background-position: -34px -149px;
             // 二维码太小 放大模糊，加对比度
             filter: contrast(133%);
           }
