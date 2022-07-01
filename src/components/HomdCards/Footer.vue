@@ -39,7 +39,7 @@
       <hr />
       <div>©2020-2022 buerka.cn all rights reserved.</div>
       <div>
-        <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备2022005044-2号</a>
+        <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备2022005044号-2</a>
         <!-- <a href="https://beian.miit.gov.cn/">皖公网安备...号</a> -->
       </div>
     </div>
