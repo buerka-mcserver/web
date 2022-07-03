@@ -1,12 +1,10 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
+import staticList from '@/assets/staticList'
 
 const videoDom = ref<HTMLElement | null>(null)
 
-const videos = [
-  '/src/assets/video/0.mp4',
-  '/src/assets/video/1.mp4'
-]
+const videos = staticList.videos
 const videoDoms: HTMLVideoElement[] = []
 let videoIndex = 0
 

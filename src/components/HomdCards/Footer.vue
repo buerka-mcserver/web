@@ -7,18 +7,15 @@
     <div class="sponsor">
       <div class="qr-code">
         <div>
-          <span class="alipay" style="background-image: url('/src/assets/qrCode/alipay.jpg');"></span>
+          <span class="alipay"></span>
           支付宝
         </div>
         <div>
-          <span
-            class="wechatpay"
-            style="background-image: url('/src/assets/qrCode/wechatpay.jpg');"
-          ></span>
+          <span class="wechatpay"></span>
           微信
         </div>
         <div>
-          <span class="qq" style="background-image: url('/src/assets/qrCode/qq.jpg');"></span>
+          <span class="qq"></span>
           qq群
         </div>
       </div>
@@ -87,16 +84,19 @@
           &.alipay {
             background-size: 152px;
             background-position: -23px -75px;
+            background-image: url(/src/assets/qrCode/alipay.jpg);
           }
           &.wechatpay {
             background-size: 183px;
             background-position: -40px -44px;
+            background-image: url(/src/assets/qrCode/wechatpay.jpg);
           }
           &.qq {
             background-size: 168px;
             background-position: -34px -149px;
             // 二维码太小 放大模糊，加对比度
             filter: contrast(133%);
+            background-image: url(/src/assets/qrCode/qq.jpg);
           }
         }
       }
